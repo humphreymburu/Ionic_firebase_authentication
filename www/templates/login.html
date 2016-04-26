@@ -1,0 +1,35 @@
+<ion-view title="Login In">
+    <ion-content padding="true" class="has-header">
+        <form>
+            <ion-list>
+			<h2>Login Page</h2>
+                <label class="item item-input">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="you@domain.com" ng-model="email">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="enter your password..." ng-model="pass">
+                </label>
+				
+			    <label class="item item-input" ng-cloak ng-show="createMode">
+			        <span class="input-label">Confirm pass</span>
+			        <input type="password" placeholder="Confirm your password..." ng-model="confirm" />
+			    </label>
+				
+			    <button  class="button button-stable button-block" ng-click="login(email, pass)" ng-hide="createMode">Log In</button>
+			    <button class="button button-stable button-block" ng-click="createMode = true" ng-hide="createMode">Register</button>
+			    <button class="button button-stable button-block" ng-cloak ng-show="createMode" ng-click="createAccount()">Create Account</button>
+			    <button class="button button-stable button-block" ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>
+
+			    <p ng-show="err" class="error">{{err}}</p>
+				
+            </ion-list>
+            <button class="button button-stable button-block" ng-click="login(email,pass)">Done</button>
+        </form>
+    </ion-content>
+</ion-view>
+
+
+
+
