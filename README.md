@@ -10,9 +10,8 @@ The starter uses the Ionic, Firebase, AngularFire Api.
 
 The seed app doesn't do much, but does demonstrate the basics of Ionic , Angular + Firebase development, including:
 
-authentication
-route security
-basic account management
+   1.authentication
+   2.basic account management
 
 
 How to use angularfire-seed
