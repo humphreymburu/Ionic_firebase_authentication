@@ -30,10 +30,14 @@ angular.module('starter.controllers', ['starter.utils', 'starter.auth'])
 
 
 .controller('LoginCtrl', ['$scope', 'Auth', '$state', 'fbutil', function($scope, Auth, $state, fbutil) {
-    $scope.email = null;
-    $scope.pass = null;
-    $scope.confirm = null;
-    $scope.createMode = false;
+    
+	$scope.data = {
+		"email" : null,
+		"pass"  : null,
+		"confirm" : null,
+		"createMode" : false
+	}
+	
 
     $scope.login = function(email, pass) {
       $scope.err = null;
@@ -45,14 +49,14 @@ angular.module('starter.controllers', ['starter.utils', 'starter.auth'])
         });
     };
 
-    $scope.createAccount = function() {
+    $scope.createAccount = function(email,password) {
       $scope.err = null;
       if( assertValidAccountProps() ) {
-        var email = $scope.email;
-        var pass = $scope.pass;
+        var email = $scope.data.email;
+        var pass = $scope.data.pass;
         // create user credentials in Firebase auth system
-        Auth.$createUser({email: email, password: pass})
-          .then(function() {
+         Auth.$createUser({email: email, password: pass})          
+		.then(function() {
             // authenticate so we have permission to write to Firebase
             return Auth.$authWithPassword({ email: email, password: pass });
           })
@@ -73,13 +77,13 @@ angular.module('starter.controllers', ['starter.utils', 'starter.auth'])
     };
 
     function assertValidAccountProps() {
-      if( !$scope.email ) {
+      if( !$scope.data.email ) {
         $scope.err = 'Please enter an email address';
       }
-      else if( !$scope.pass || !$scope.confirm ) {
+      else if( !$scope.data.pass || !$scope.data.confirm ) {
         $scope.err = 'Please enter a password';
       }
-      else if( $scope.createMode && $scope.pass !== $scope.confirm ) {
+      else if( $scope.data.createMode && $scope.data.pass !== $scope.data.confirm ) {
         $scope.err = 'Passwords do not match';
       }
       return !$scope.err;

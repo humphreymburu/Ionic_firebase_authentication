@@ -5,19 +5,19 @@
 			<h2>Login Page</h2>
                 <label class="item item-input">
                     <span class="input-label">Email</span>
-                    <input type="email" placeholder="you@domain.com" ng-model="email">
+                    <input type="text" placeholder="you@domain.com" ng-model="data.email">
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Password</span>
-                    <input type="password" placeholder="enter your password..." ng-model="pass">
+                    <input type="password" placeholder="enter your password..." ng-model="data.pass">
                 </label>
 				
 			    <label class="item item-input" ng-cloak ng-show="createMode">
 			        <span class="input-label">Confirm pass</span>
-			        <input type="password" placeholder="Confirm your password..." ng-model="confirm" />
+			        <input type="password" placeholder="Confirm your password..." ng-model="data.confirm" />
 			    </label>
 				
-			    <button  class="button button-stable button-block" ng-click="login(email, pass)" ng-hide="createMode">Log In</button>
+			    <button  class="button button-stable button-block" ng-click="login(data.email, data.pass)" ng-hide="createMode">Log In</button>
 			    <button class="button button-stable button-block" ng-click="createMode = true" ng-hide="createMode">Register</button>
 			    <button class="button button-stable button-block" ng-cloak ng-show="createMode" ng-click="createAccount()">Create Account</button>
 			    <button class="button button-stable button-block" ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>
