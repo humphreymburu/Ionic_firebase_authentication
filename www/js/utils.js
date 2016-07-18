@@ -53,11 +53,14 @@ angular.module('starter.utils', ['firebase', 'starter.config'])
        * @return a Firebase instance
        */
       function firebaseRef(path) {
-        var ref = new $window.Firebase(FBURL);
-        var args = Array.prototype.slice.call(arguments);
-        if( args.length ) {
-          ref = ref.child(pathRef(args));
-        }
-        return ref;
+  	      // new 3.0 SDK method!
+  	    var ref = firebase.database().ref();
+		  
+          //var ref = new $window.Firebase(FBURL);
+          var args = Array.prototype.slice.call(arguments);
+          if( args.length ) {
+            ref = ref.child(pathRef(args));
+          }
+          return ref;
       }
    }]);
