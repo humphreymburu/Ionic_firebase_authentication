@@ -14,10 +14,10 @@
 				
 			    <label class="item item-input" ng-cloak ng-show="createMode">
 			        <span class="input-label">Confirm pass</span>
-			        <input type="password" placeholder="Confirm your password..." ng-model="data.confirm" />
+			        <input type="password" placeholder="Confirm your password..." ng-model="data.confirm"/>
 			    </label>
 				
-			    <button  class="button button-stable button-block" ng-click="login(data.email, data.pass)" ng-hide="createMode">Log In</button>
+			    <button  class="button button-stable button-block" ng-click="login(data.email,data.pass)" ng-hide="createMode">Log In</button>
 			    <button class="button button-stable button-block" ng-click="createMode = true" ng-hide="createMode">Register</button>
 			    <button class="button button-stable button-block" ng-cloak ng-show="createMode" ng-click="createAccount()">Create Account</button>
 			    <button class="button button-stable button-block" ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>
@@ -27,6 +27,12 @@
             </ion-list>
             <button class="button button-stable button-block" ng-click="login(email,pass)">Done</button>
         </form>
+		
+		<div ng-controller="socialCtrl">
+		<button ng-click="faceSign()" class="btn">Log in with Facebook</button> <br>          
+		<button ng-click="twitterSign()" class="btn">Log in with Twitter</button>       
+		</div>
+		
     </ion-content>
 </ion-view>
 

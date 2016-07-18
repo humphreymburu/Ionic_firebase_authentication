@@ -1,4 +1,5 @@
-angular.module('starter.auth', ['firebase', 'starter.utils'])
-  .factory('Auth', ['$firebaseAuth', 'fbutil', function($firebaseAuth, fbutil) {
-    return $firebaseAuth(fbutil.ref());
-  }]);
+angular.module('starter.auth', ['firebase'])
+.factory('Auth', ['$firebaseAuth', function($firebaseAuth) {		 
+  return $firebaseAuth();
+}]);
+

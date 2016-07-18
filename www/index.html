@@ -19,7 +19,20 @@
     <script src="cordova.js"></script>
 
 	<!-- Firebase -->
-	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyAJYLYMnFoGFRu8ceBYwZzIpDJDKt21Wlo",
+	    authDomain: "events-app-363cb.firebaseapp.com",
+	    databaseURL: "https://events-app-363cb.firebaseio.com",
+	    storageBucket: "events-app-363cb.appspot.com",
+	  };
+	  firebase.initializeApp(config);
+	</script>
 
 
     <!-- your app's js -->
@@ -31,10 +44,12 @@
 	<script src="js/auth.js"></script>
 
 	<!-- AngularFire -->
-	<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
 	
     <!-- ngMessages -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.js"></script>
+	
+	
 	
   </head>
   <body ng-app="starter">
